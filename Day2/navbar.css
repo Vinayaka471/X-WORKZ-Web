@@ -1,0 +1,50 @@
+.navClass{
+    background-color: rgb(242, 13, 13);
+    overflow: hidden;
+    padding: 8px;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navClass ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navClass ul li{
+    float: left;
+    border-radius: 2vh;
+}
+
+
+.navClass ul li a{
+    color: white;
+    padding: 2px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    align-items: center;
+    
+    
+}
+#Searchid{
+    float: right;
+    margin-right: 20px;
+}
+
+li:hover{
+    background-color:rgb(5, 239, 40) ;
+}
+#searchId input[type="text"]{
+    padding: 8px 12px;
+    border:none;
+    border-radius:4px;
+    background-image: url(image.png);
+    width: 75%;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 40px;
+    border-radius: 2vh;
+
+}

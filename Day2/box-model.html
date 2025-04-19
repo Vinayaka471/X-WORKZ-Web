@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Box model</title>
+        <style>
+            .model{
+                border: 5px solid red;
+                margin:10px 20px 30px 40ox;
+                padding: 60px 90px;
+            }
+            .box1 {
+                border: 2px solid green;
+                height: 200px;
+                width: 300px;
+                margin:100px 10px 10px 900px;
+            }
+            .box2 {
+                border:4px dotted blue;
+                margin:20px 40px 60px;
+                padding:50px 70px;
+                background-color: darkorchid;
+            }
+            /*1.Descedent selector
+              2.Child selector div >p{}
+              3.Adjacent sibling selector div + p{}  -> after applying div tag then use <p> tag
+              4.General sibling seletor div ~ p{}
+              */
+            div p{
+                color:brown;
+            }
+            div >p{
+                color:cornflowerblue;
+            }
+            div + p{
+                color:skyblue;
+            }
+            div ~p{
+                color:coral
+            }
+        </style>
+    </head>
+    <body>
+        <!--Contenents of webpage-->
+        <div class="model">CS box model</div><br>
+        <!--border --><div class="box1">
+        <div class="box2">Vinayaka</div>
+        <div>
+            <p>India</p>
+            <p>America</p>
+            <span>
+                <p>Japan</p>
+            </span>
+            </div>
+            <p>China</p>
+        </div>
+    </body>
+</html>

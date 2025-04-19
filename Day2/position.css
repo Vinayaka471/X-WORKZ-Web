@@ -1,0 +1,99 @@
+<
+            .fixed {
+                background-color: orangered;
+            }
+
+                ul {
+                    list-style-type: none;
+                    background-color: blue;
+                }
+
+                ul li{
+                
+                    margin: 10px;
+                }
+                body{
+                    margin: 0;
+                }
+                li{
+                    color:white;
+                }
+
+                li:hover{
+                    background-color: chocolate;
+                }
+
+                <link href="postion.css">
+                
+
+        </style>
+
+    </head>
+    <body>
+        <ul>
+            <li>Home</li>
+            <li><a href="https://about.instagram.com/" style="color:aliceblue;text-decoration:none;">About</a></li>
+            <li><a href="https://www.instagram.com/accounts/login/?hl=en" style="color:aliceblue;text-decoration:none;">Profile</a></li>
+            <li><a href="https://www.instagramfontstyle.com/" style="color:aliceblue;text-decoration:none; margin-left:1400px;">Sign in</a></li>
+        </ul>
+        <!--position-->
+
+
+        </div>
+        <div class="fixed" style="text-align: center;"> X-WORKZ</div><br>
+
+        <div class="relative" style="text-align: center;">
+            Royal Challengers Of Bengaluru
+        </div><br>
+
+        <div class="fixed" style="text-align: center;"> 
+            X-WORKZ
+            <button>Click Me</button>
+        </div><br>
+        
+        <div class="relative" style="text-align: center;">
+            Royal Challengers Of Bengaluru
+            <form>
+                <input type="radio" id="option1" name="team" value="RCB">
+                <label for="option1">RCB</label>
+        
+                <input type="radio" id="option2" name="team" value="MI">
+                <label for="option2">MI</label>
+        
+                <input type="radio" id="option3" name="team" value="CSK">
+                <label for="option3">CSK</label>
+            </form>
+        </div>
+
+        <h2>RCB Players List</h2>
+<table border="1">
+    <tr>
+        <th>Player Name</th>
+        <th>Role</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Virat Kohli</td>
+        <td>Batsman</td>
+        <td>India</td>
+    </tr>
+    <tr>.
+        <td>Rajat Patidar</td>
+        <td>Batsman</td>
+        <td>India</td>
+    </tr>
+    <tr>
+        <td>Faf du Plessis</td>
+        <td>Batsman</td>
+        <td>South Africa</td>
+    </tr>
+    <tr>
+        <td>Josh Hazlewood</td>
+        <td>Bowler</td>
+        <td>Australia</td>
+    </tr>
+    <tr>
+        <td>Mohammed Siraj</td>
+        <td>Bowler</td>
+        <td>India</td>
+    </tr>
