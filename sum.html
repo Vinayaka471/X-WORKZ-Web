@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function onClick(){
+            console.log(sum);
+            alert('hello');
+             // if we use let and const as data type,it will not allow to use the reference before initialization or declaration, but if we use var it will allow it.
+            const sum=2+2;
+            console.log(sum);
+        }
+    </script> -->
+</head>
+<body>
+    <div>
+        <h1>Javascript Dates</h1>
+        <h2>Using new date()</h2>
+        <p>Create a new date object with the current date and time:</p>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <script>
+           function onClick(){
+            const d=new Date();
+            document.getElementById("demo1").innerHTML=d.getDay();
+            document.getElementById("demo").innerHTML=d.getDate();
+            document.getElementById("demo").innerHTML=d.getFullYear();
+            document.getElementById("demo").innerHTML=d.getHours();
+           }
+        </script>
+         <button onclick="onClick()">click me</button> 
+    </div>
+</body>
+</html>
