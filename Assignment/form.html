@@ -1,32 +1,63 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
-    <title>Hello Everyone</title>
-    <script src="form.js"></script>
-    </head>
-    <body>
-        <!--<button onclick="onClick(2,3)">Click me</button>-->
-        <form name="forName" onsubmit="submitForm()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="Form.js">
+
+    </script>
+</head>
+
+<body>
+
+    <form name="formName" onsubmit="submitForm()">
+        <div>
+            <label for="nameId">Name</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="text" id="name" name="nameName" placeholder="Name" required>
+            <br>
+            <label for="numId">Number</label>
+            <span style="color: red;">*</span>
+            <input type="number" id="numId" name="numberNumber" placeholder="Number" required>
+            <br>
+            <label for="emaiId">Email</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="text" id="emailId" name="emailEmail" placeholder="Email" required>
+            <br>
+            <label for="genderId">Gender</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <label>Male</label>
+            <input type="radio" name="gender" value="Male" id="Male">
+            <label>Female</label>
+            <input type="radio" name="gender" value="Female" id="Female">
+            <p>By accessing or using this service, you agree to be bound by these Terms and Conditions along with our
+                Privacy Policy. These terms govern your use of the platform and all related services provided. If you do
+                not agree to any part of the terms, you are advised not to use the service. We reserve the right to
+                update or modify these terms at any time without prior notice. Continued use of the service after such
+                changes constitutes your acceptance of the revised terms. Users are expected to provide accurate
+                information and refrain from any illegal, harmful, or abusive activity while using the service. All
+                content, including logos, designs, text, and images, is protected by copyright and intellectual property
+                laws and may not be used without permission. We do not take responsibility for any loss or damage
+                arising from the use or inability to use the service. In case of violation of these terms, we may
+                suspend or terminate your access without notice. These terms are governed by the laws of your local
+                jurisdiction, and any disputes will be subject to those laws. For any questions or concerns regarding
+                these Terms and Conditions, please contact our support team.
+                <label for="checkId"></label>
+                <input type="checkbox" name="checkName" id="checkId"></p>
+                
+                
+
             <div>
-                <label for="nameId">Name</label>
-                <span style="color:red;"></span>
-                <span>:</span>
-                <input type="text" id="nameId" name="nameName" required>
+                <button type="submit" value="submit">Submit</button>
+                <button type="reset" value="clear">Clear</button>
             </div>
-            
-            <div>
-                <label for="numberId">Number</label>
-                <span style="color:red"></span>
-                <span>:</span>
-                <input type="number" id="numberId" number="numberNumber" required>
-            </div>
-            <div>
-                <button type="submit" value="Submit">Submit</button>
-                <button type="reset" value="Clear">Clear</button>
-            </div>
-        </form>
-    </body>
-    </html>
+        </div>
+    </form>
+</body>
+
+</html>
