@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <title>Hello Everyone</title>
+    <script src="form.js"></script>
+    </head>
+    <body>
+        <!--<button onclick="onClick(2,3)">Click me</button>-->
+        <form name="forName" onsubmit="submitForm()">
+            <div>
+                <label for="nameId">Name</label>
+                <span style="color:red;"></span>
+                <span>:</span>
+                <input type="text" id="nameId" name="nameName" required>
+            </div>
+            
+            <div>
+                <label for="numberId">Number</label>
+                <span style="color:red"></span>
+                <span>:</span>
+                <input type="number" id="numberId" number="numberNumber" required>
+            </div>
+            <div>
+                <button type="submit" value="Submit">Submit</button>
+                <button type="reset" value="Clear">Clear</button>
+            </div>
+        </form>
+    </body>
+    </html>
