@@ -3,69 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
-    <script src="Form.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Form.js"></script>
 </head>
 
 <body>
-    <span id="nameId">Yes</span>
-    <button onclick="onClick()">Click me</button>
-    <br>
-    <span class="numberClass">No</span>
-    <button onclick="onClick()">Click me</button>
-    <br>
-    <span name="nameName">Hello</span>
-    <button onclick="onClick()">Click me</button>
-    <br>
-    <span tagName="tagName">Tag</span>
-    <button onclick="onClick()">Click me</button>
-
     <form name="formName" onsubmit="return submitForm()">
         <div>
-            <br>
             <label for="nameId">Name</label>
-            <span style="color: red;">*</span>:
-            <input type="text" id="nameId" name="nameName" placeholder="Name" required>
-           
-            <br>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="text" id="nameId" name="nameName" required>
+            <span style="color: red;" id="namespan"></span>
+        </div>
 
-            <label for="numId">Number</label>
-            <span style="color: red;">*</span>:
-            <input type="text" id="numId" name="numberNumber" placeholder="Number" required>
-            <br>
+        <div>
+            <label for="numberId">Number</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="number" id="numberId" name="numberName" required>
+            <span style="color: red;" id="numberspan"></span>
 
-            <label for="emailId">Email</label>
-            <span style="color: red;">*</span>:
-            <input type="email" id="emailId" name="emailEmail" placeholder="Email" required>
-            <br>
-
-            <label>Gender</label>
-            <span style="color: red;">*</span>:
-            <label>Male</label>
-            <input type="radio" name="gender" value="Male" required>
-            <label>Female</label>
-            <input type="radio" name="gender" value="Female" required>
-            <br>
-
-            <label for="passwordId">Password</label>
-            <span style="color:red">*</span>:
-            <input type="password" id="passwordId" name="passwardPassward" placeholder="Password" required>
-            <br>
-
-            <label for="confirmId">Confirm Password</label>
-            <span style="color:red">*</span>:
-            <input type="password" id="confirmId" name="correctCorrect" placeholder="Confirm Password" required>
-            <br>
-
+        </div>
+        <div>
             <label for="ageId">Age</label>
-            <span style="color:red">*</span>:
-            <input type="number" id="ageId" name="ageAge" placeholder="Age" required>
-            <br>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="number" id="ageId" name="age" required>
+            <span style="color: red;" id="agespan"></span>
 
-            <div>
-                <button type="submit">Submit</button>
-                <button type="reset">Clear</button>
-            </div>
+        </div>
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Clear">Clear</button>
         </div>
     </form>
 </body>
