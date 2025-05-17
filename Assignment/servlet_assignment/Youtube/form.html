@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Form.js"></script>
+</head>
+
+<body>
+    <form name="formName" onsubmit="return submitForm()">
+        <div>
+            <label for="nameId">Name</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="text" id="nameId" name="nameName" required>
+            <span style="color: red;" id="namespan"></span>
+        </div>
+
+        <div>
+            <label for="numberId">Number</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="number" id="numberId" name="numberName" required>
+            <span style="color: red;" id="numberspan"></span>
+
+        </div>
+        <div>
+            <label for="ageId">Age</label>
+            <span style="color: red;">*</span>
+            <span>:</span>
+            <input type="number" id="ageId" name="age" required>
+            <span style="color: red;" id="agespan"></span>
+
+        </div>
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Clear">Clear</button>
+        </div>
+    </form>
+</body>
+
+</html>

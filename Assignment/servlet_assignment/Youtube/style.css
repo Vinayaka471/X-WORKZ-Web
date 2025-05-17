@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: white; 
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 60px;
+    color: black; 
+    background-color: white; 
+    position: relative;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  } 
+  .logo {
+    height: 55px;
+  }
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    margin-left: -300px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+  }
+  .search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+  }
+  .search-btn {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: #e5e5e5;
+    border-left: none;
+    color: black;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+  }
+  .video-layout {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .main-video {
+    flex: 3;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+  
+  .main-video iframe {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .suggested-videos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .suggested-video {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .suggested-video iframe {
+    width: 168px;
+    height: 94px;
+    border-radius: 6px;
+  }
+  
+  .video-info {
+    flex: 1;
+  }
+  
+  .video-info h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .video-info p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #555;
+  }
+  .video-description {
+    margin-top: 20px;
+  }
+  
+  .video-description h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000;
+  }
+  
+  .video-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .span{
+    display: left;
+  }
+  
+  .channel-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .channel-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  
+  .channel-info h4 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .verified {
+    color: #1e88e5;
+    font-weight: bold;
+  }
+  
+  .subscribe-btn {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .video-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+  }
+  
+  .video-actions button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .video-description {
+    margin-top: 20px;
+  }
+  
+  .video-description h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000;
+  }
+  
+  .video-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  
+  .channel-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .channel-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  
+  .channel-info h4 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .subscribe-btn {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .video-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+  }
+  
+  .video-actions button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mic-btn {
+    margin-left: 10px;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    color: #333;
+    display: flex;
+    font-size: 16px;
+  
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .sign-in-btn {
+    background-color: white;
+    color: #065fd4;
+    border: 1px solid #065fd4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
