@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Virtual Website</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container-form {
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 25px 30px;
+        margin: 40px auto;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        color: #212529;
+      }
+      .form-control, .form-select {
+        min-height: 38px;
+        font-size: 0.9rem;
+      }
+      .form-label {
+        font-weight: 600;
+      }
+      h1 {
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      }
+      .top-right-image {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        height: 50px;
+        z-index: 1030;
+      }
+      nav.navbar {
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      }
+      .navbar {
+        background-color: rgba(220, 53, 69, 0.9) !important;
+      }
+      a.nav-link, a.nav-link.active {
+        color: #fff !important;
+      }
+      a.nav-link:hover, a.nav-link:focus {
+        color: #ffe;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+
+    <a
+      href="https://x-workz.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="top-right-image"
+    >
+      <img
+        src="https://www.x-workz.in/Logo.png"
+        alt="X-Workz Logo"
+        style="height: 100%"
+      />
+    </a>
+
+    <h1 class="text-center">Student Application Form</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item me-3">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                onclick="showHome(); return false;"
+              >
+                Home
+              </a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="https://x-workz.in/" target="_blank">Link</a>
+            </li>
+            <li class="nav-item me-3">
+              <a
+                class="nav-link"
+                href="about.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About
+              </a>
+            </li>
+            <li class="nav-item dropdown me-3">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-house-door me-2"></i>Dashboard</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section (hidden by default) -->
+    <div id="homeSection" class="container mt-5" style="display:none;">
+      <h2>Welcome to X-Workz</h2>
+      <p>X-workz holds official registration with the Ministry of Micro, Small & Medium Enterprises (MSME), reflecting its commitment to regulatory compliance and industry excellence.</p>
+      <p>Web Tech: Java , HTML , Css , Javascript , MySQL , Jsp , MVC , Jdbc , Springboot</p>
+      <button class="btn btn-primary" onclick="showForm()">Go to Form</button>
+    </div>
+
+    <!-- Form Section -->
+    <div id="formSection" class="container-form">
+      <form id="studentForm">
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              aria-label="First name"
+              name="firstName"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              aria-label="Last name"
+              name="lastName"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" required />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" name="password" required />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputMobile" class="form-label">Mobile No</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputMobile"
+            name="mobile"
+            placeholder="+91"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            name="address"
+            placeholder="Apartment, studio, or floor"
+            required
+          />
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-4">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity" name="city" required />
+          </div>
+          <div class="col-md-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select" name="state" required>
+              <option value="" selected disabled>Choose...</option>
+              <option>Karnataka</option>
+              <option>Tamil Nadu</option>
+              <option>Maharashtra</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputZip"
+              name="zip"
+              placeholder="Enter zip code"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="gridCheck"
+              name="agree"
+              required
+            />
+            <label class="form-check-label" for="gridCheck">
+              I agree
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Sign in</button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function showHome() {
+        document.getElementById('homeSection').style.display = 'block';
+        document.getElementById('formSection').style.display = 'none';
+      }
+
+      function showForm() {
+        document.getElementById('homeSection').style.display = 'none';
+        document.getElementById('formSection').style.display = 'block';
+      }
+
+      // Clear form fields on submit
+      document.getElementById('studentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission for demo
+
+        // Here you can do form validation or submission via AJAX if needed
+
+        // Clear all fields
+        this.reset();
+
+        alert('Form submitted successfully and cleared!');
+      });
+    </script>
+  </body>
+</html>
