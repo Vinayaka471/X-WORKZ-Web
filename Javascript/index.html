@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="form.js"></script>
+    <style>
+        .redcolor {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form name="formname" onsubmit="return validate()">
+        <div>
+            <label for="nameId">Name</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <input type="text" id="nameId" name="nameName" required>
+        </div>
+
+        <div>
+            <label for="ageId">Age</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <input type="number" id="ageId" name="ageAge" required>
+        </div>
+
+        <div>
+            <label for="emailId">Email</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <input type="text" id="emailId" name="emailEmail" required>
+        </div>
+
+        <div>
+            <label for="passwordId">Password</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <input type="text" id="passwordId" name="passwordPassword" required>
+        </div>
+
+        <div>
+            <label for="confirmPasswordId">Confirm Password</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <input type="text" id="confirmPasswordId" name="confirmConfirm" required>
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <span class="redcolor">*</span>
+            <span>:</span>
+            <label><input type="radio" name="gender" value="male" required>Male</label><br>
+            <label><input type="radio" name="gender" value="female" required>Female</label><br>
+            <label><input type="radio" name="gender" value="other" required>Other</label><br>
+        </div>
+
+        <div>
+            <label>Course</label>
+            <span class="redcolor">*</span>
+            <span>:</span><br>
+            <label><input type="checkbox" name="course1" value="java">Java</label><br>
+            <label><input type="checkbox" name="course2" value="sql">SQL</label><br>
+            <label><input type="checkbox" name="course3" value="c">C</label><br>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+</body>
+</html>
