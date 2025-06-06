@@ -21,29 +21,34 @@
         color: #fff;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
+
       .container-form {
         max-width: 700px;
         background: rgba(255, 255, 255, 0.95);
         padding: 25px 30px;
         margin: 40px auto;
         border-radius: 12px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         color: #212529;
       }
+
       .form-control, .form-select {
         min-height: 38px;
         font-size: 0.9rem;
       }
+
       .form-label {
         font-weight: 600;
       }
+
       h1 {
         font-weight: 700;
         margin-top: 40px;
         margin-bottom: 30px;
         color: #fff;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
       }
+
       .top-right-image {
         position: fixed;
         top: 10px;
@@ -51,23 +56,25 @@
         height: 50px;
         z-index: 1030;
       }
+
       nav.navbar {
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      }
-      .navbar {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         background-color: rgba(220, 53, 69, 0.9) !important;
       }
-      a.nav-link, a.nav-link.active {
+
+      a.nav-link,
+      a.nav-link.active {
         color: #fff !important;
       }
-      a.nav-link:hover, a.nav-link:focus {
+
+      a.nav-link:hover,
+      a.nav-link:focus {
         color: #ffe;
         text-decoration: underline;
       }
     </style>
   </head>
   <body>
-
     <a
       href="https://x-workz.in/"
       target="_blank"
@@ -113,14 +120,7 @@
               <a class="nav-link" href="https://x-workz.in/" target="_blank">Link</a>
             </li>
             <li class="nav-item me-3">
-              <a
-                class="nav-link"
-                href="about.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                About
-              </a>
+              <a class="nav-link" href="about.html" target="_blank">About</a>
             </li>
             <li class="nav-item dropdown me-3">
               <a
@@ -146,11 +146,15 @@
       </div>
     </nav>
 
-    <!-- Home Section (hidden by default) -->
+    <!-- Home Section -->
     <div id="homeSection" class="container mt-5" style="display:none;">
       <h2>Welcome to X-Workz</h2>
-      <p>X-workz holds official registration with the Ministry of Micro, Small & Medium Enterprises (MSME), reflecting its commitment to regulatory compliance and industry excellence.</p>
-      <p>Web Tech: Java , HTML , Css , Javascript , MySQL , Jsp , MVC , Jdbc , Springboot</p>
+      <p>
+        X-Workz is registered with the Ministry of Micro, Small & Medium Enterprises (MSME), ensuring quality training and placement-focused programs.
+      </p>
+      <p>
+        Web Tech: Java, HTML, CSS, JavaScript, MySQL, JSP, MVC, JDBC, Spring Boot
+      </p>
       <button class="btn btn-primary" onclick="showForm()">Go to Form</button>
     </div>
 
@@ -159,84 +163,70 @@
       <form id="studentForm">
         <div class="row g-3 mb-3">
           <div class="col-md-6">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="First name"
-              aria-label="First name"
-              name="firstName"
-              required
-            />
+            <input type="text" class="form-control" placeholder="First name" name="firstName" required />
           </div>
           <div class="col-md-6">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Last name"
-              aria-label="Last name"
-              name="lastName"
-              required
-            />
+            <input type="text" class="form-control" placeholder="Last name" name="lastName" required />
           </div>
         </div>
 
         <div class="row g-3 mb-3">
           <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" name="email" required />
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" required />
           </div>
           <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" name="password" required />
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" required />
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="inputMobile" class="form-label">Mobile No</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputMobile"
-            name="mobile"
-            placeholder="+91"
-            required
-          />
+          <label class="form-label">Mobile No</label>
+          <input type="text" class="form-control" name="mobile" placeholder="+91" required />
         </div>
 
         <div class="mb-3">
-          <label for="inputAddress" class="form-label">Address</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            name="address"
-            placeholder="Apartment, studio, or floor"
-            required
-          />
+          <label class="form-label">Address</label>
+          <input type="text" class="form-control" name="address" placeholder="Apartment, studio, or floor" required />
         </div>
 
         <div class="row g-3 mb-4">
           <div class="col-md-4">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity" name="city" required />
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" name="city" required />
           </div>
           <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select" name="state" required>
+            <label class="form-label">State</label>
+            <select class="form-select" name="state" required>
               <option value="" selected disabled>Choose...</option>
               <option>Karnataka</option>
               <option>Tamil Nadu</option>
               <option>Maharashtra</option>
+              <option>Andhra Pradesh</option>
+              <option>Kerala</option>
+              <option>Odisha</option>
+              <option>Uttar Pradesh</option>
+              <option>Jammu & Kashmir</option>
+              <option>Telangana</option>
+              <option>Himachal Pradesh</option>
+              <option>Nagaland</option>
+              <option>Haryana</option>
+              <option>West Bengal</option>
+              <option>Goa</option>
+              <option>Rajasthan</option>
+              <option>Jharkhand</option>
+              <option>Assam</option>
+              <option>Chhattisgarh</option>
             </select>
           </div>
           <div class="col-md-4">
-            <label for="inputZip" class="form-label">Zip</label>
+            <label class="form-label">Pin</label>
             <input
               type="text"
               class="form-control"
-              id="inputZip"
-              name="zip"
-              placeholder="Enter zip code"
+              name="pin"
+              placeholder="Enter Pin code"
               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
               required
             />
@@ -245,16 +235,8 @@
 
         <div class="mb-4">
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="gridCheck"
-              name="agree"
-              required
-            />
-            <label class="form-check-label" for="gridCheck">
-              I agree
-            </label>
+            <input class="form-check-input" type="checkbox" name="agree" required />
+            <label class="form-check-label">I agree</label>
           </div>
         </div>
 
@@ -275,16 +257,10 @@
         document.getElementById('formSection').style.display = 'block';
       }
 
-      // Clear form fields on submit
       document.getElementById('studentForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission for demo
-
-        // Here you can do form validation or submission via AJAX if needed
-
-        // Clear all fields
-        this.reset();
-
-        alert('Form submitted successfully and cleared!');
+        event.preventDefault(); // Prevent default form submission
+        this.reset(); // Clear the form
+        alert('Form submitted successfully');
       });
     </script>
   </body>
