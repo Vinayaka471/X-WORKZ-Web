@@ -1,0 +1,74 @@
+<form id="myForm" onsubmit="return validateForm()">
+    <h3>Select your gender:</h3>
+    <label><input type="radio" name="gender" value="male"> Male</label>
+    <label><input type="radio" name="gender" value="female"> Female</label>
+
+    <h3>Select your courses:</h3>
+    <label><input type="checkbox" name="courses" value="java"> java</label>
+    <label><input type="checkbox" name="courses" value="python"> python</label>
+    <label><input type="checkbox" name="courses" value="sql"> sql</label>
+
+    <select id="country">
+        <option value="">--Select a country--</option>
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+    </select>
+
+    <!-- Date -->0m6t
+    <input type="date">
+
+    <!-- File -->
+    <input type="file">
+
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<script src="form.js">
+    function validateForm() {
+        // radio
+        const gender = document.querySelector('input[name="gender"]:checked');
+        if (!gender) {
+            alert("Please select your gender.");
+            return false;
+        }
+
+        //checkboxes
+        const course = document.querySelectorAll('input[name="courses"]:checked');
+        const valuess = Array.from(course).map(checkbox => checkbox.value)
+        console.log(valuess);
+
+        if (hobbies.length === 0) {
+            alert("Please select at least one course.");
+            return false;
+        }
+
+        // Dropdown
+        const country = document.getElementById("country").value;
+
+        if (country === "") {
+            alert("Please select your country.");
+            return false;
+        }
+
+        // Date
+
+        const birthDate = new Date(document.getElementById("dob").value);
+        const today = new Date();
+        if (birthDate > today) {
+            alert("Birth date cant be in the future.");
+        }
+
+        // File
+
+        const file = document.getElementById("file").files[0];
+        if (file.size > 2 * 1024 * 1024) {
+            alert("File size must be less than 2MB.");
+        }
+
+        return true;
+    }
+
+</script>
