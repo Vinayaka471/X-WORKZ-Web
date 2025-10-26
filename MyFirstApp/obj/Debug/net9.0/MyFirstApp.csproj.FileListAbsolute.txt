@@ -1,0 +1,15 @@
+C:\X-WORKZ-Web\MyFirstApp\bin\Debug\net9.0\MyFirstApp.exe
+C:\X-WORKZ-Web\MyFirstApp\bin\Debug\net9.0\MyFirstApp.deps.json
+C:\X-WORKZ-Web\MyFirstApp\bin\Debug\net9.0\MyFirstApp.runtimeconfig.json
+C:\X-WORKZ-Web\MyFirstApp\bin\Debug\net9.0\MyFirstApp.dll
+C:\X-WORKZ-Web\MyFirstApp\bin\Debug\net9.0\MyFirstApp.pdb
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.AssemblyInfoInputs.cache
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.AssemblyInfo.cs
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.csproj.CoreCompileInputs.cache
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.sourcelink.json
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.dll
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\refint\MyFirstApp.dll
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.pdb
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\MyFirstApp.genruntimeconfig.cache
+C:\X-WORKZ-Web\MyFirstApp\obj\Debug\net9.0\ref\MyFirstApp.dll
