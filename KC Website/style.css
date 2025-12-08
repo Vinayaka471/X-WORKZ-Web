@@ -1,0 +1,650 @@
+/* Global Styles & Variables */
+:root {
+    --primary-blue: #0277BD;
+    /* Deep Blue from Logo context */
+    --primary-red: #D50000;
+    /* Red from Logo context */
+    --light-bg: #F8F9FA;
+    /* Light background for body */
+    --section-bg: #E3E7ED;
+    /* Slightly darker gray for content blocks */
+    --dark-text: #1a1a1a;
+    --light-text: #ffffff;
+    --gray-text: #555555;
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --font-heading: 'Baloo Chettan 2', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --border-radius-lg: 40px;
+    /* Reference style rounded corners */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-text);
+    background-color: white;
+    /* Clean white background between blocks */
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-top: 80px;
+    /* Space for fixed header */
+}
+
+h1,
+h2,
+h3,
+.nav-title,
+.kannada-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Header & Nav */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    height: 45px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.nav-title {
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--gray-text);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+/* Main Content Wrapper */
+main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* Gap between gray blocks */
+}
+
+/* Common Section Block Style */
+.section-block {
+    background: var(--section-bg);
+    border-radius: var(--border-radius-lg);
+    padding: 4rem 3rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    /* Light blue gradient block */
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
+}
+
+.kannada-text {
+    color: var(--primary-red);
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-description {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--gray-text);
+    font-weight: 400;
+    font-family: var(--font-heading);
+    margin-top: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-text);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: var(--primary-red);
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary-blue);
+    border: 2px solid white;
+    /* Looks cleaner on colored bg */
+}
+
+/* Hero Image & Mockup */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.calendar-card-mockup {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transform: rotate(-2deg);
+    /* Playful tilt */
+    transition: transform 0.3s;
+}
+
+.calendar-card-mockup:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-mockup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Marquee Announcement */
+.marquee-container {
+    background-color: var(--primary-red);
+    padding: 1rem 0;
+    margin: 2rem auto;
+    max-width: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.marquee-container marquee {
+    color: #FFD600;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    padding: 0 2rem;
+}
+
+/* Features Section */
+.features-section {
+    background: #F5F5F5;
+    /* Neutral gray block */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-blue);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    /* Matches big rounded theme */
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: #EFF6FF;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+/* Instruction Card (Free Calendar) */
+.instruction-section-wrapper {
+    background: white;
+    /* Wrapped in white to separate from gray features */
+    padding: 0 1rem;
+}
+
+.instruction-card {
+    background: #FFEBEE;
+    /* Very Light Red background for importance */
+    border-radius: var(--border-radius-lg);
+    padding: 4rem;
+    box-shadow: none;
+    /* Flat style for blocks */
+    border-left: none;
+    /* Removed border */
+    width: 100%;
+    position: relative;
+    max-width: 1000px;
+    margin: 1rem auto 3rem;
+}
+
+.instruction-icon {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    width: 80px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    background: white;
+    padding: 4px;
+}
+
+.instruction-title {
+    color: var(--primary-red);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(213, 0, 0, 0.1);
+    padding-bottom: 1rem;
+    padding-right: 100px;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 column layout for steps */
+    gap: 2rem;
+}
+
+.step-item {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    align-items: flex-start;
+}
+
+.step-number {
+    font-size: 1.5rem;
+    background: var(--primary-blue);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    text-align: justify;
+}
+
+.step-list {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.step-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    background: #F1F8E9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    color: #33691E;
+}
+
+/* Google Form Button */
+.form-button-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
+}
+
+.google-form-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-red), #FF1744);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(213, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 3px solid var(--primary-red);
+}
+
+.google-form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(213, 0, 0, 0.4);
+    background: linear-gradient(135deg, #FF1744, var(--primary-red));
+}
+
+/* CTA Section */
+.cta-section {
+    background: #263238;
+    /* Dark Block */
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-logo-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.google-play-logo {
+    height: 120px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.google-play-logo:hover {
+    transform: scale(1.05);
+}
+
+.cta-email-text {
+    color: #FFD600;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+}
+
+.email-link {
+    color: #FFD600;
+    text-decoration: underline;
+}
+
+.email-link:hover {
+    color: #FFF;
+}
+
+.app-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-google,
+.btn-apple {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.store-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Play Store Badge Image */
+.play-store-badge {
+    height: 60px;
+    /* Adjust size to look like a standard button */
+    width: auto;
+    transition: transform 0.2s;
+}
+
+.download-link {
+    display: inline-block;
+}
+
+.download-link:hover .play-store-badge {
+    transform: scale(1.05);
+}
+
+/* Footer - Reference Style */
+.site-footer {
+    background-color: var(--section-bg);
+    /* Match section gray */
+    padding: 4rem 1rem 0;
+    margin-top: 2rem;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    /* Rounded top only */
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.footer-content {
+    background: #111;
+    /* Dark Inner Footer */
+    border-radius: 30px;
+    color: #aaa;
+    padding: 3rem 2rem;
+    position: relative;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Social Pill - Floating */
+.social-pill {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-blue);
+    /* Blue instead of Yellow */
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-copyright {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-block {
+        padding: 3rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .kannada-text {
+        font-size: 2.5rem;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .instruction-icon {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .instruction-title {
+        padding-right: 0;
+        font-size: 1.5rem;
+    }
+}
