@@ -544,8 +544,8 @@ main {
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-blue);
-    /* Blue instead of Yellow */
+    background: #FFFFFF;
+    /* White background for colored icons */
     padding: 10px 30px;
     border-radius: 50px;
     display: flex;
@@ -554,7 +554,7 @@ main {
 }
 
 .social-icon {
-    color: white;
+    /* color: white; Removed to allow SVG original colors */
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
