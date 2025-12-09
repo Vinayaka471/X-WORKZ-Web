@@ -13,15 +13,19 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Baloo+Chettan+2:wght@400;600;800&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <style>
         /* Embedded CSS for Redeem Section */
         .redeem-section {
             background: #ffffff;
             border-radius: 16px;
-            padding: 30px;
+            padding: 40px;
+            padding: 40px;
             margin: 30px auto;
-            max-width: 600px;
+            width: 100%;
+            /* Force full width */
+            max-width: 100%;
+            /* Remove restriction to fit window */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             text-align: center;
             border: 1px solid #e1e4e8;
@@ -181,7 +185,12 @@
                 </p>
                 <div class="hero-buttons animate-fade-up delay-2">
                     <a href="https://play.google.com/store/apps/details?id=com.dailycalendar.kannada&hl=en_IN"
-                        target="_blank" class="btn btn-primary">Download 2026 Calendar</a>
+                        target="_blank" class="btn btn-download">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                        </svg>
+                        Download 2026 Calendar
+                    </a>
                 </div>
             </div>
             <div class="hero-image animate-fade-in delay-2">
@@ -216,8 +225,7 @@
                         <div class="step-content">
                             <h4>ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಗೂಗಲ್ ಫಾರ್ಮ್ ಆಯ್ಕೆ ಮಾಡಿ</h4>
                             <p>ವೆಬ್‌ಪೇಜ್ ತೆರೆದ ನಂತರ, ಮೊಬೈಲ್‌ನಲ್ಲಿ ಕೆಳಕ್ಕೆ ಸ್ಕ್ರೋಲ್ ಮಾಡಿ.ಗೂಗಲ್ ಫಾರ್ಮ್ ತೆರೆಯಲು ಮಾನ್ಯವಾದ
-                                ರಿಡೀಮ್ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ ನಂತರ ಗೂಗಲ್ ಫಾರ್ಮ್ ಬಟನ್‌ ಮೇಲೆ ಕ್ಲಿಕ್
-                                ಮಾಡಿ.</p>
+                                ರಿಡೀಮ್ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ ನಂತರ ಕೆಳಗೆ ಕಾಣುವ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ.</p>
                         </div>
                     </div>
                     <div class="step-item">
@@ -274,12 +282,11 @@
                 again.</p>
             <p id="redeem-success" class="success-message" style="display: none;">Code Verified Successfully! 🎉</p>
 
-            <!-- Google Form Button (Hidden by default) -->
+            <!-- Google Form Iframe (Shown after verification) -->
             <div id="google-form-container" style="display: none; margin-top: 20px;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSctLsypAgeVsrrD90PR6WjaW4PyCQtolJ70-q0TIb_flcERgQ/viewform?usp=publish-editor"
-                    target="_blank" class="google-form-btn animate-bounce">
-                    📝 ಉಚಿತ ಕ್ಯಾಲೆಂಡರ್ ಪಡೆಯಲು ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ- Fill Form
-                </a>
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSctLsypAgeVsrrD90PR6WjaW4PyCQtolJ70-q0TIb_flcERgQ/viewform?embedded=true"
+                    width="100%" height="1374" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
 

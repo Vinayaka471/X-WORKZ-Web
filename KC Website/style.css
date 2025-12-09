@@ -408,25 +408,11 @@ main {
     background: white;
 }
 
-.google-form-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary-red), #FF1744);
-    color: white;
-    padding: 1.2rem 3rem;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(213, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    border: 3px solid var(--primary-red);
-}
-
-.google-form-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(213, 0, 0, 0.4);
-    background: linear-gradient(135deg, #FF1744, var(--primary-red));
+/* Google Form Button (Removed in favor of embedded form) */
+.form-button-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
 }
 
 /* CTA Section */
@@ -452,6 +438,7 @@ main {
     height: 120px;
     width: auto;
     transition: transform 0.3s ease;
+    border-radius: 12px;
 }
 
 .google-play-logo:hover {
@@ -615,25 +602,57 @@ main {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    /* Global Spacing */
     .section-block {
         padding: 3rem 1.5rem;
         border-radius: 24px;
     }
 
+    /* Navbar Mobile */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Section Mobile */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 3rem;
+        padding-top: 2rem;
+        gap: 2rem;
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .kannada-text {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Feature Cards */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Instructions & Steps */
     .steps-container {
         grid-template-columns: 1fr;
     }
@@ -641,10 +660,113 @@ main {
     .instruction-icon {
         position: static;
         margin-bottom: 1rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .instruction-title {
         padding-right: 0;
         font-size: 1.5rem;
+        text-align: center;
     }
+
+    /* Redeem Section Mobile */
+    .redeem-input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #redeem-code-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-verify {
+        width: 100%;
+    }
+
+    /* Footer Mobile */
+    .site-footer {
+        padding-top: 3rem;
+    }
+
+    .social-pill {
+        position: static;
+        transform: none;
+        margin: 0 auto 2rem;
+        width: fit-content;
+    }
+
+    .footer-content {
+        padding-top: 1rem;
+    }
+}
+
+/* Custom Download Button with Icon */
+.btn-download {
+    background-color: #0088cc;
+    /* Updated to a vibrant blue */
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+    font-size: 1.1rem;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+    background-color: #0077b3;
+}
+
+.btn-download svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Download Icon Animation */
+@keyframes downloadBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(3px);
+    }
+
+    60% {
+        transform: translateY(2px);
+    }
+}
+
+.btn-download svg {
+    animation: downloadBounce 1s infinite;
+}
+
+/* Embedded Google Form */
+.google-form-iframe {
+    width: 100%;
+    height: 600px;
+    /* Adjust height as needed */
+    border: none;
+    border-radius: 12px;
+    background: #fafafa;
+    margin-top: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
