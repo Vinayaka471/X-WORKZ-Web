@@ -13,24 +13,201 @@
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <meta name="description"
         content="Earn ₹1000 by promoting the Kannada Calendar App. Open to YouTube, Instagram, and Facebook creators.">
 </head>
 
 <body>
 
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <style>
+        /* Dark Mode Toggle Button Styles */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .theme-toggle svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .sun-icon {
+            position: absolute;
+            opacity: 1;
+        }
+
+        .moon-icon {
+            position: absolute;
+            opacity: 0;
+        }
+
+        body.dark-mode .sun-icon {
+            opacity: 0;
+            transform: rotate(180deg);
+        }
+
+        body.dark-mode .moon-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                width: 45px;
+                height: 45px;
+                top: 15px;
+                right: 15px;
+            }
+
+            .theme-toggle svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        /* Additional dark mode styles for specific elements */
+        body.dark-mode .details-list {
+            background: var(--card-bg);
+        }
+
+        body.dark-mode .step-content {
+            background: var(--bg-light);
+        }
+
+        body.dark-mode .info-list li {
+            background: var(--bg-light);
+        }
+
+        body.dark-mode .footer-terms {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .cta-section {
+            background: var(--bg-white);
+        }
+
+        body.dark-mode .form-container {
+            background: var(--card-bg);
+        }
+
+        body.dark-mode .reward-table-container {
+            background: var(--card-bg);
+        }
+
+        body.dark-mode .reward-table tbody tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        body.dark-mode .reward-table tbody tr:nth-child(odd) {
+            background-color: var(--card-bg);
+        }
+
+        body.dark-mode .reward-table tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Dark mode for social media section */
+        body.dark-mode .social-media-section {
+            background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%);
+        }
+
+        body.dark-mode .social-link-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        body.dark-mode .social-link-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply the saved theme on page load
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Save the user's preference
+            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <span class="badge">Reward Program / ಬಹುಮಾನ ಕಾರ್ಯಕ್ರಮ</span>
-                <h1>Earn ₹1000 by Promoting Kannada Calendar<br><span class="kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಪ್ರಚಾರ ಮಾಡಿ
-                        ₹1000 ಗಳಿಸಿ</span></h1>
-                <p>YouTube, Instagram & Facebook creators can earn ₹1000 for 1 Lakh+ views on their promotional
-                    video.<br><span class="kannada-text-sm">ವೀಡಿಯೊಗೆ 1 ಲಕ್ಷಕ್ಕೂ ಹೆಚ್ಚು ವೀಕ್ಷಣೆಗಳನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು ₹1000
-                        ಬಹುಮಾನ ಪಡೆಯಿರಿ.</span></p>
-                <a href="form.html" class="btn btn-primary">Claim Your Reward <br> <span class="btn-sub">ಬಹುಮಾನ
-                        ಪಡೆಯಿರಿ</span></a>
+                <div class="hero-top-wrapper">
+                    <img src="assets/logo.png" alt="Kannada Calendar 2026" class="hero-logo">
+                    <span class="badge">Reward Program</span>
+                    <h1>Earn ₹1000 by Promoting Kannada Calendar<br><span class="kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಪ್ರಚಾರ
+                            ಮಾಡಿ
+                            ₹1000 ಗಳಿಸಿ</span></h1>
+                </div>
+                <div class="hero-bottom-wrapper">
+                    <p><span class="highlight-yellow">YouTube, Instagram & Facebook creators can earn ₹1000 for 1
+                            Lakh+ views on their promotional
+                            video.</span><br><span class="kannada-text-sm highlight-yellow">ವೀಡಿಯೊಗೆ 1 ಲಕ್ಷಕ್ಕೂ ಹೆಚ್ಚು
+                            ವೀಕ್ಷಣೆಗಳನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು
+                            ₹1000
+                            ಬಹುಮಾನ ಪಡೆಯಿರಿ.</span></p>
+                    <a href="form.html" class="btn btn-primary">Claim Your Reward <br> <span class="btn-sub">ಬಹುಮಾನ
+                            ಪಡೆಯಿರಿ</span></a>
+                </div>
             </div>
         </div>
     </header>
@@ -41,8 +218,9 @@
             <h2 class="section-title">About the Program <br> <span class="kannada-title">ಕಾರ್ಯಕ್ರಮದ ಬಗ್ಗೆ</span></h2>
             <p class="text-center section-desc">We reward content creators who help spread the word about the
                 <strong>Kannada Calendar App & Website</strong>. Create a video, reach the milestone, and get
-                paid!<br><br><span class="kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತು ವೆಬ್‌ಸೈಟ್ ಅನ್ನು ಪ್ರಚಾರ ಮಾಡುವ
-                    ಕಂಟೆಂಟ್ ಕ್ರಿಯೇಟರ್‌ಗಳಿಗೆ ನಾವು ಬಹುಮಾನ ನೀಡುತ್ತೇವೆ.</span></p>
+                paid!<br><br><span class="kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಅಪ್ಲಿಕೇಶನ್ ಅಥವಾ ವೆಬ್‌ಸೈಟ್ ಅನ್ನು ಪ್ರಚಾರ ಮಾಡುವ
+                    ಕಂಟೆಂಟ್ ಕ್ರಿಯೇಟರ್‌ಗಳಿಗೆ ನಾವು ಬಹುಮಾನ ನೀಡುತ್ತೇವೆ.</span>
+            </p>
         </div>
     </section>
 
@@ -123,6 +301,80 @@
     <section class="section bg-light">
         <div class="container">
             <h2 class="section-title">Reward Details <br> <span class="kannada-title">ಬಹುಮಾನದ ವಿವರಗಳು</span></h2>
+            <div class="reward-table-container">
+                <table class="reward-table">
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Views</th>
+                            <th>Reward</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Platform">
+                                <div class="platform-cell">
+                                    <div class="table-icon youtube">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                            <path
+                                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                                        </svg>
+                                    </div>
+                                    Youtube
+                                </div>
+                            </td>
+                            <td data-label="Views">
+                                <div class="views-cell">
+                                    <span class="view-count">100k</span>
+                                    <span class="kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                </div>
+                            </td>
+                            <td data-label="Reward" class="reward-cell">₹1000</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Platform">
+                                <div class="platform-cell">
+                                    <div class="table-icon instagram">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                            <path
+                                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                        </svg>
+                                    </div>
+                                    Instagram
+                                </div>
+                            </td>
+                            <td>
+                                <div class="views-cell">
+                                    <span class="view-count">100k</span>
+                                    <span class="kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                </div>
+                            </td>
+                            <td class="reward-cell">₹1000</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Platform">
+                                <div class="platform-cell">
+                                    <div class="table-icon facebook">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                            <path
+                                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.641c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                                        </svg>
+                                    </div>
+                                    Facebook
+                                </div>
+                            </td>
+                            <td data-label="Views">
+                                <div class="views-cell">
+                                    <span class="view-count">100k</span>
+                                    <span class="kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                </div>
+                            </td>
+                            <td data-label="Reward" class="reward-cell">₹1000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="details-list">
                 <div class="detail-item">
                     <span>Reward Amount / ಮೊತ್ತ:</span>
@@ -183,6 +435,232 @@
                     ಸಲ್ಲಿಸಿ & ಬಹುಮಾನ ಪಡೆಯಿರಿ</span></a>
         </div>
     </section>
+
+    <!-- Enhanced Social Media Links Section -->
+    <style>
+        /* Enhanced Social Media Section Styles */
+        .social-media-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .social-heading {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .social-subheading {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Noto Sans Kannada', sans-serif;
+        }
+
+        .social-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-link-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+        }
+
+        .social-link-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link-card svg {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link-card:hover svg {
+            transform: scale(1.15);
+        }
+
+        .social-link-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .social-link-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .social-link-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .social-media-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+                border-radius: 20px;
+            }
+
+            .social-heading {
+                font-size: 1.6rem;
+            }
+
+            .social-subheading {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .social-icons-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .social-link-card {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .social-link-card svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .social-link-card img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-media-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .social-heading {
+                font-size: 1.4rem;
+            }
+
+            .social-subheading {
+                font-size: 0.9rem;
+            }
+
+            .social-link-card svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .social-link-card img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .social-link-name {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+    <!-- Social Media Section HTML -->
+    <div class="container">
+        <div class="social-media-section">
+            <h2 class="social-heading">Connect With Us</h2>
+            <p class="social-subheading">ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರಿ | Stay Updated</p>
+
+            <div class="social-icons-grid">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkannadacalendar.in" target="_blank"
+                    class="social-link-card" aria-label="Follow us on Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #1877F2;">
+                        <path
+                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                    </svg>
+                    <span class="social-link-name">Facebook</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/" target="_blank" class="social-link-card"
+                    aria-label="Follow us on Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <defs>
+                            <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FED373;stop-opacity:1" />
+                                <stop offset="25%" style="stop-color:#F15245;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#D92E7F;stop-opacity:1" />
+                                <stop offset="75%" style="stop-color:#9B36B7;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#515ECF;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#instagram-gradient)"
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    </svg>
+                    <span class="social-link-name">Instagram</span>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="https://x.com/intent/post?text=Kannada%20Calendar%202025-26%20Live%20Daily%20%E0%B2%95%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B2%E0%B3%86%E0%B2%82%E0%B2%A1%E0%B2%B0%E0%B3%8D%20%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1%202026&url=https%3A%2F%2Fkannadacalendar.in"
+                    target="_blank" class="social-link-card" aria-label="Follow us on X">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #000000;">
+                        <path
+                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                    </svg>
+                    <span class="social-link-name">X (Twitter)</span>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://telegram.me/share/url?url=https%3A%2F%2Fkannadacalendar.in&text=Kannada%20Calendar%202025-26%20Live%20Daily%20%E0%B2%95%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B2%E0%B3%86%E0%B2%82%E0%B2%A1%E0%B2%B0%E0%B3%8D%20%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1%202026"
+                    target="_blank" class="social-link-card" aria-label="Join us on Telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="fill: #0088cc;">
+                        <path
+                            d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z" />
+                    </svg>
+                    <span class="social-link-name">Telegram</span>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://www.whatsapp.com/channel/0029VaDcfdAIiRou6RuGYr0d" target="_blank"
+                    class="social-link-card" aria-label="Join our WhatsApp Channel">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill: #25D366;">
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                    </svg>
+                    <span class="social-link-name">WhatsApp</span>
+                </a>
+
+                <!-- Website -->
+                <a href="https://kannadacalendar.in" target="_blank" class="social-link-card"
+                    aria-label="Visit our Website">
+                    <img src="assets/logo.png" alt="Kannada Calendar Logo"
+                        style="width: 40px; height: 40px; object-fit: contain; border-radius: 8px;">
+                    <span class="social-link-name">Website</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
