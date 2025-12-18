@@ -1,0 +1,764 @@
+/* Root Variables - Light Mode (Default) */
+:root {
+    --primary-color: #0ea5e9;
+    /* Sky Blue */
+    --primary-dark: #0284c7;
+    /* Darker Sky Blue */
+    --accent-color: #f43f5e;
+    /* Light Red */
+    --text-color: #1e293b;
+    /* Dark Slate */
+    --text-light: #64748b;
+    /* Slate */
+    --bg-white: #ffffff;
+    --bg-light: #f1f5f9;
+    /* Light Gray */
+    --font-main: 'Inter', sans-serif;
+    --font-kannada: 'Noto Sans Kannada', sans-serif;
+
+    /* Additional colors for dark mode */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --primary-color: #38bdf8;
+    --primary-dark: #0ea5e9;
+    --accent-color: #fb7185;
+    --text-color: #f1f5f9;
+    --text-light: #cbd5e1;
+    --bg-white: #0f172a;
+    --bg-light: #1e293b;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transition for theme changes */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main), var(--font-kannada);
+    color: var(--text-color);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    width: 90%;
+    max-width: 600px;
+    /* Constrained for mobile-first feel but good on desktop */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.section-desc {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Kannada Text Helpers */
+.kannada-text {
+    display: block;
+    font-family: var(--font-kannada);
+    font-size: 0.6em;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.kannada-text-sm {
+    display: block;
+    font-family: var(--font-kannada);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.kannada-title {
+    display: block;
+    font-family: var(--font-kannada);
+    font-size: 0.7em;
+    color: var(--primary-dark);
+    margin-top: 0.25rem;
+}
+
+.btn-sub {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    font-family: var(--font-kannada);
+}
+
+/* Green Highlight */
+.highlight-yellow {
+    color: #10b981;
+    /* Bright green that works in both light and dark mode */
+    font-weight: 600;
+}
+
+body.dark-mode .highlight-yellow {
+    color: #34d399;
+    /* Slightly brighter green for dark mode */
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-large {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
+    width: 100%;
+}
+
+.btn-large:active {
+    transform: scale(0.98);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* Grid System */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    margin-bottom: 1rem;
+}
+
+.icon.youtube {
+    color: #FF0000;
+}
+
+.icon.instagram {
+    color: #E1306C;
+}
+
+.icon.facebook {
+    color: #1877F2;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.card p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Steps */
+.step-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 100%;
+}
+
+/* Details List */
+.details-list {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item span {
+    color: var(--text-light);
+}
+
+.detail-item strong {
+    color: var(--text-color);
+    text-align: right;
+}
+
+/* Info List */
+.info-list {
+    list-style-type: none;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.info-list li {
+    background: var(--bg-light);
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.info-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Terms Footer */
+.footer-terms {
+    padding: 3rem 1rem;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.footer-terms h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.footer-terms ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.footer-terms li {
+    margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: white;
+}
+
+.cta-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive Enhancements */
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .step-item {
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .btn-large {
+        width: auto;
+        padding: 1rem 4rem;
+    }
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Reward Table */
+.reward-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.reward-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+    font-family: var(--font-main);
+}
+
+.reward-table thead {
+    background-color: #E91E63;
+    /* Pink Card Style */
+    color: white;
+}
+
+.reward-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.reward-table th:first-child {
+    padding-left: 1.5rem;
+}
+
+.reward-table th:last-child {
+    padding-right: 1.5rem;
+}
+
+.reward-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.reward-table tr:last-child td {
+    border-bottom: none;
+}
+
+.reward-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.reward-table td:first-child {
+    padding-left: 1.5rem;
+}
+
+.reward-table td:last-child {
+    padding-right: 1.5rem;
+}
+
+.platform-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.table-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reuse existing icon colors */
+.table-icon.youtube {
+    color: #FF0000;
+}
+
+.table-icon.instagram {
+    color: #E1306C;
+}
+
+.table-icon.facebook {
+    color: #1877F2;
+}
+
+.views-cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-count {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.kannada-sub {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-family: var(--font-kannada);
+    line-height: 1.2;
+    margin-top: 0.1rem;
+}
+
+.reward-cell {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Mobile Responsive Table Redesign */
+@media (max-width: 600px) {
+    .reward-table-container {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    /* Force table to display as table */
+    .reward-table,
+    .reward-table tbody,
+    .reward-table tr,
+    .reward-table td,
+    .reward-table th {
+        display: table-cell;
+    }
+
+    .reward-table {
+        display: table;
+    }
+
+    .reward-table tbody,
+    .reward-table thead {
+        display: table-row-group;
+    }
+
+    .reward-table tr {
+        display: table-row;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+
+    /* Header Visibility */
+    .reward-table thead {
+        display: table-header-group;
+    }
+
+    .reward-table th {
+        padding: 1rem 0.5rem;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    /* Zebra Striping */
+    .reward-table tbody tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    .reward-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    /* Cells */
+    .reward-table td {
+        display: table-cell;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.9rem;
+    }
+
+    .reward-table td::before {
+        display: none;
+    }
+
+    .reward-table td:first-child,
+    .reward-table th:first-child {
+        padding-left: 1rem;
+        text-align: left;
+    }
+
+    .reward-table td:last-child,
+    .reward-table th:last-child {
+        padding-right: 1rem;
+        text-align: right;
+    }
+
+    /* Content Adjustments */
+    .platform-cell {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    .view-count {
+        font-size: 0.9rem;
+    }
+
+    .kannada-sub {
+        display: none;
+        /* Hide subtitle to save space if needed, or keep small */
+    }
+
+    .reward-cell {
+        font-size: 1rem;
+    }
+}
+
+/* General Mobile Sizing Adjustments */
+@media (max-width: 600px) {
+
+    /* Layout & Spacing */
+    .section {
+        padding: 2rem 0;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    /* Typography */
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hero Section Split Layout */
+    .hero-section {
+        background: transparent;
+        /* Remove global blue background */
+        padding: 0;
+        text-align: center;
+    }
+
+    /* Top Part (Blue Card) */
+    .hero-top-wrapper {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        padding: 2.5rem 0 3rem 0;
+        /* Add bottom padding for better spacing */
+        /* Break out of container to be full width */
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+        padding: 0 1rem;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-logo {
+        width: 80px;
+        margin-bottom: 1rem;
+    }
+
+    /* Bottom Part (White Background) */
+    .hero-bottom-wrapper {
+        padding: 2rem 1rem;
+        color: var(--text-color);
+        background: white;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        /* Ensure text is dark on white */
+        opacity: 1;
+    }
+
+    /* Flip Button Colors for White Background */
+    .hero-bottom-wrapper .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.4);
+    }
+
+    .hero-bottom-wrapper .btn-sub {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Components */
+    .card {
+        padding: 1.25rem;
+    }
+
+    .card h3 {
+        font-size: 1.15rem;
+    }
+
+    .btn-large {
+        font-size: 1.1rem;
+        padding: 0.875rem 1rem;
+        width: 100%;
+    }
+
+    .step-item {
+        gap: 0.75rem;
+    }
+
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+}
