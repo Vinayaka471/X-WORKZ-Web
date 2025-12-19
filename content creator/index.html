@@ -1,0 +1,1060 @@
+<!-- 
+WordPress Compatible Code for Kannada Calendar Reward Program
+Add this code to a WordPress page/post or custom template
+Make sure to enqueue fonts in functions.php:
+wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap');
+-->
+
+<div class="kannada-reward-wrapper">
+    <style>
+        /* Scoped Styles for WordPress Compatibility */
+        .kannada-reward-wrapper {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Root Variables - Light Mode (Default) */
+        .kannada-reward-wrapper {
+            --kc-primary-color: #0ea5e9;
+            --kc-primary-dark: #0284c7;
+            --kc-accent-color: #f43f5e;
+            --kc-text-color: #1e293b;
+            --kc-text-light: #64748b;
+            --kc-bg-white: #ffffff;
+            --kc-bg-light: #f1f5f9;
+            --kc-font-main: 'Inter', sans-serif;
+            --kc-font-kannada: 'Noto Sans Kannada', sans-serif;
+            --kc-card-bg: #ffffff;
+            --kc-border-color: #e2e8f0;
+            --kc-shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Mode Support */
+        .kannada-reward-wrapper.dark-mode {
+            --kc-primary-color: #38bdf8;
+            --kc-primary-dark: #0ea5e9;
+            --kc-accent-color: #fb7185;
+            --kc-text-color: #f1f5f9;
+            --kc-text-light: #cbd5e1;
+            --kc-bg-white: #0f172a;
+            --kc-bg-light: #1e293b;
+            --kc-card-bg: #1e293b;
+            --kc-border-color: #334155;
+            --kc-shadow-color: rgba(0, 0, 0, 0.3);
+            background-color: var(--kc-bg-white);
+            color: var(--kc-text-color);
+        }
+
+        /* Reset within wrapper */
+        .kannada-reward-wrapper * {
+            box-sizing: border-box;
+        }
+
+        .kannada-reward-wrapper a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .kannada-reward-wrapper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Utilities */
+        .kc-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .kc-text-center {
+            text-align: center;
+        }
+
+        .kc-text-left {
+            text-align: left;
+        }
+
+        .kc-section {
+            padding: 3rem 0;
+        }
+
+        .kc-bg-light {
+            background-color: var(--kc-bg-light);
+        }
+
+        .kc-section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--kc-text-color);
+        }
+
+        .kc-section-desc {
+            color: var(--kc-text-light);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Kannada Text Helpers */
+        .kc-kannada-text {
+            display: block;
+            font-family: var(--kc-font-kannada);
+            font-size: 0.6em;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .kc-kannada-text-sm {
+            display: block;
+            font-family: var(--kc-font-kannada);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .kc-kannada-title {
+            display: block;
+            font-family: var(--kc-font-kannada);
+            font-size: 0.7em;
+            color: var(--kc-primary-dark);
+            margin-top: 0.25rem;
+        }
+
+        .kc-btn-sub {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 400;
+            margin-top: 0.2rem;
+            font-family: var(--kc-font-kannada);
+        }
+
+        /* Highlight */
+        .kc-highlight-yellow {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .kannada-reward-wrapper.dark-mode .kc-highlight-yellow {
+            color: #34d399;
+        }
+
+        /* Buttons */
+        .kc-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-family: var(--kc-font-main);
+        }
+
+        .kc-btn-primary {
+            background-color: var(--kc-bg-white);
+            color: var(--kc-primary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .kc-btn-primary:active,
+        .kc-btn-primary:hover {
+            transform: scale(0.98);
+        }
+
+        .kc-btn-large {
+            background-color: var(--kc-accent-color);
+            color: white;
+            font-size: 1.25rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
+            width: 100%;
+        }
+
+        .kc-btn-large:active,
+        .kc-btn-large:hover {
+            transform: scale(0.98);
+        }
+
+        /* Hero Section */
+        .kc-hero-section {
+            background: linear-gradient(135deg, var(--kc-primary-color), var(--kc-primary-dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            margin-bottom: 0;
+        }
+
+        .kc-hero-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            animation: kc-fadeInDown 0.8s ease;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        @keyframes kc-fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .kc-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .kc-hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        .kc-hero-content p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Grid System */
+        .kc-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .kc-card {
+            background: var(--kc-card-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px var(--kc-shadow-color);
+            transition: transform 0.2s, background-color 0.3s ease;
+        }
+
+        .kc-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .kc-icon {
+            margin-bottom: 1rem;
+        }
+
+        .kc-icon.youtube {
+            color: #FF0000;
+        }
+
+        .kc-icon.instagram {
+            color: #E1306C;
+        }
+
+        .kc-icon.facebook {
+            color: #1877F2;
+        }
+
+        .kc-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            margin-top: 0;
+        }
+
+        .kc-card p {
+            font-size: 0.875rem;
+            color: var(--kc-text-light);
+            margin: 0;
+        }
+
+        /* Steps */
+        .kc-step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .kc-step-number {
+            background-color: var(--kc-primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .kc-step-content {
+            background: var(--kc-bg-light);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            width: 100%;
+        }
+
+        /* Details List */
+        .kc-details-list {
+            background: var(--kc-card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .kc-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--kc-bg-light);
+        }
+
+        .kc-detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .kc-detail-item span {
+            color: var(--kc-text-light);
+        }
+
+        .kc-detail-item strong {
+            color: var(--kc-text-color);
+            text-align: right;
+        }
+
+        /* Info List */
+        .kc-info-list {
+            list-style-type: none;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .kc-info-list li {
+            background: var(--kc-bg-light);
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            color: var(--kc-text-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .kc-info-list li::before {
+            content: "•";
+            color: var(--kc-primary-color);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        /* Terms Footer */
+        .kc-footer-terms {
+            padding: 3rem 1rem;
+            background-color: var(--kc-bg-light);
+            border-top: 1px solid var(--kc-border-color);
+            font-size: 0.875rem;
+            color: var(--kc-text-light);
+        }
+
+        .kc-footer-terms h3 {
+            margin-bottom: 1rem;
+            color: var(--kc-text-color);
+            margin-top: 0;
+        }
+
+        .kc-footer-terms ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .kc-footer-terms li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .kc-cta-section {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: var(--kc-bg-white);
+        }
+
+        .kc-cta-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        /* Reward Table */
+        .kc-reward-table-container {
+            overflow-x: auto;
+            background: var(--kc-card-bg);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .kc-reward-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 300px;
+            font-family: var(--kc-font-main);
+        }
+
+        .kc-reward-table thead {
+            background-color: #E91E63;
+            color: white;
+        }
+
+        .kc-reward-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .kc-reward-table th:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .kc-reward-table th:last-child {
+            padding-right: 1.5rem;
+        }
+
+        .kc-reward-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        .kc-reward-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .kc-reward-table tbody tr:nth-child(even) {
+            background-color: var(--kc-bg-light);
+        }
+
+        .kc-reward-table tbody tr:hover {
+            background-color: var(--kc-bg-light);
+        }
+
+        .kc-reward-table td:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .kc-reward-table td:last-child {
+            padding-right: 1.5rem;
+        }
+
+        .kc-platform-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--kc-text-color);
+        }
+
+        .kc-table-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kc-table-icon.youtube {
+            color: #FF0000;
+        }
+
+        .kc-table-icon.instagram {
+            color: #E1306C;
+        }
+
+        .kc-table-icon.facebook {
+            color: #1877F2;
+        }
+
+        .kc-views-cell {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kc-view-count {
+            font-weight: 600;
+            color: var(--kc-text-color);
+        }
+
+        .kc-kannada-sub {
+            font-size: 0.7rem;
+            color: var(--kc-text-light);
+            font-family: var(--kc-font-kannada);
+            line-height: 1.2;
+            margin-top: 0.1rem;
+        }
+
+        .kc-reward-cell {
+            font-weight: 700;
+            color: var(--kc-text-color);
+            font-size: 1.1rem;
+        }
+
+        /* Social Media Section */
+        .kc-social-media-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .kc-social-heading {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .kc-social-subheading {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-family: var(--kc-font-kannada);
+        }
+
+        .kc-social-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .kc-social-link-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+        }
+
+        .kc-social-link-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .kc-social-link-card svg {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .kc-social-link-card:hover svg {
+            transform: scale(1.15);
+        }
+
+        .kc-social-link-card img {
+            transition: transform 0.3s ease;
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .kc-social-link-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .kc-social-link-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Steps Grid */
+        .kc-steps {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .kc-container {
+                max-width: 800px;
+            }
+
+            .kc-hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .kc-steps {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .kc-step-item {
+                margin-bottom: 0;
+                height: 100%;
+            }
+
+            .kc-btn-large {
+                width: auto;
+                padding: 1rem 4rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .kc-hero-section {
+                background: transparent;
+                padding: 0;
+            }
+
+            .kc-hero-top-wrapper {
+                background: linear-gradient(135deg, var(--kc-primary-color), var(--kc-primary-dark));
+                padding: 2.5rem 0 3rem 0;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                border-bottom-left-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                color: white;
+                margin-bottom: 0;
+            }
+
+            .kc-hero-bottom-wrapper {
+                padding: 2rem 1rem;
+                color: var(--kc-text-color);
+                background: var(--kc-bg-white);
+            }
+
+            .kc-hero-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0;
+                padding: 0 1rem;
+            }
+
+            .kc-hero-logo {
+                width: 80px;
+                margin-bottom: 1rem;
+            }
+
+            .kc-hero-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                color: var(--kc-text-color);
+                opacity: 1;
+            }
+
+            .kc-hero-bottom-wrapper .kc-btn-primary {
+                background-color: var(--kc-primary-color);
+                color: white;
+                box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.4);
+            }
+
+            .kc-section {
+                padding: 2rem 0;
+            }
+
+            .kc-container {
+                width: 92%;
+            }
+
+            .kc-section-title {
+                font-size: 1.5rem;
+            }
+
+            .kc-reward-table th,
+            .kc-reward-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .kc-reward-table th {
+                text-align: center;
+            }
+
+            .kc-reward-table td {
+                text-align: center;
+            }
+
+            .kc-platform-cell {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+                font-size: 0.85rem;
+            }
+
+            .kc-social-media-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+                border-radius: 20px;
+            }
+
+            .kc-social-heading {
+                font-size: 1.6rem;
+            }
+
+            .kc-social-subheading {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .kc-social-icons-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Home Tab Content -->
+    <div id="kc-home" class="kc-tab-content kc-active">
+        <!-- Hero Section -->
+        <header class="kc-hero-section">
+            <div class="kc-container">
+                <div class="kc-hero-content">
+                    <div class="kc-hero-top-wrapper">
+                        <img src="https://kannadacalendar.in/images/freecalimage/logo.png" alt="Kannada Calendar 2026" class="kc-hero-logo">
+                        <span class="kc-badge">Reward Program</span>
+                        <h1>Earn ₹1000 by Promoting Kannada Calendar<br><span class="kc-kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಪ್ರಚಾರ ಮಾಡಿ ₹1000 ಗಳಿಸಿ</span></h1>
+                    </div>
+                    <div class="kc-hero-bottom-wrapper">
+                        <p><span class="kc-highlight-yellow">YouTube, Instagram & Facebook creators can earn ₹1000 for 1 Lakh+ views on their promotional video.</span><br><span class="kc-kannada-text-sm kc-highlight-yellow">ವೀಡಿಯೊಗೆ 1 ಲಕ್ಷಕ್ಕೂ ಹೆಚ್ಚು ವೀಕ್ಷಣೆಗಳನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು ₹1000 ಬಹುಮಾನ ಪಡೆಯಿರಿ.</span></p>
+                        <a href="#" class="kc-btn kc-btn-primary kc-claim-btn">Claim Your Reward <br> <span class="kc-btn-sub">ಬಹುಮಾನ ಪಡೆಯಿರಿ</span></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="kc-section">
+            <div class="kc-container">
+                <h2 class="kc-section-title">About the Program <br> <span class="kc-kannada-title">ಕಾರ್ಯಕ್ರಮದ ಬಗ್ಗೆ</span></h2>
+                <p class="kc-text-center kc-section-desc">We reward content creators who help spread the word about the <strong>Kannada Calendar App & Website</strong>. Create a video, reach the milestone, and get paid!<br><br><span class="kc-kannada-text">ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತು ವೆಬ್‌ಸೈಟ್ ಅನ್ನು ಪ್ರಚಾರ ಮಾಡುವ ಕಂಟೆಂಟ್ ಕ್ರಿಯೇಟರ್‌ಗಳಿಗೆ ನಾವು ಬಹುಮಾನ ನೀಡುತ್ತೇವೆ.</span></p>
+            </div>
+        </section>
+
+        <!-- Who Can Apply -->
+        <section class="kc-section kc-bg-light">
+            <div class="kc-container">
+                <h2 class="kc-section-title">Who Can Apply? <br> <span class="kc-kannada-title">ಯಾರು ಅರ್ಹರು?</span></h2>
+                <div class="kc-grid-3">
+                    <div class="kc-card">
+                        <div class="kc-icon youtube">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </div>
+                        <h3>YouTube</h3>
+                        <p>Content Creators<br>ಯೂಟ್ಯೂಬ್ ರಚನೆಕಾರರು</p>
+                    </div>
+                    <div class="kc-card">
+                        <div class="kc-icon instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>Reel Creators<br>ರೀಲ್ಸ್ ರಚನೆಕಾರರು</p>
+                    </div>
+                    <div class="kc-card">
+                        <div class="kc-icon facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.641c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                            </svg>
+                        </div>
+                        <h3>Facebook</h3>
+                        <p>Video Creators<br>ವೀಡಿಯೊ ರಚನೆಕಾರರು</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="kc-section">
+            <div class="kc-container">
+                <h2 class="kc-section-title">How It Works <br> <span class="kc-kannada-title">ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?</span></h2>
+                <div class="kc-steps kc-text-left">
+                    <div class="kc-step-item">
+                        <div class="kc-step-number">1</div>
+                        <div class="kc-step-content"><strong>Create a Video / ವಿಡಿಯೋ ಮಾಡಿ</strong> <br> Promoting Kannada Calendar App or Website.</div>
+                    </div>
+                    <div class="kc-step-item">
+                        <div class="kc-step-number">2</div>
+                        <div class="kc-step-content"><strong>Publish & Share / ಪಬ್ಲಿಷ್ ಮಾಡಿ</strong> <br> Upload to YouTube, Instagram, or Facebook.</div>
+                    </div>
+                    <div class="kc-step-item">
+                        <div class="kc-step-number">3</div>
+                        <div class="kc-step-content"><strong>Get Views / ವೀಕ್ಷಣೆಗಳನ್ನು ಪಡೆಯಿರಿ</strong> <br> Reach 1,00,000+ views on your video.</div>
+                    </div>
+                    <div class="kc-step-item">
+                        <div class="kc-step-number">4</div>
+                        <div class="kc-step-content"><strong>Fill the Form / ಫಾರ್ಮ್ ತುಂಬಿ</strong> <br> Open the App/Website and fill the Claim Form.</div>
+                    </div>
+                    <div class="kc-step-item">
+                        <div class="kc-step-number">5</div>
+                        <div class="kc-step-content"><strong>Get Paid / ಹಣ ಪಡೆಯಿರಿ</strong> <br> Receive ₹1000 after verification.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reward Details -->
+        <section class="kc-section kc-bg-light">
+            <div class="kc-container">
+                <h2 class="kc-section-title">Reward Details <br> <span class="kc-kannada-title">ಬಹುಮಾನದ ವಿವರಗಳು</span></h2>
+                <div class="kc-reward-table-container">
+                    <table class="kc-reward-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Views</th>
+                                <th>Reward</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="kc-platform-cell">
+                                        <div class="kc-table-icon youtube">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                                            </svg>
+                                        </div>
+                                        Youtube
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="kc-views-cell">
+                                        <span class="kc-view-count">100k</span>
+                                        <span class="kc-kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                    </div>
+                                </td>
+                                <td class="kc-reward-cell">₹1000</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="kc-platform-cell">
+                                        <div class="kc-table-icon instagram">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                            </svg>
+                                        </div>
+                                        Instagram
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="kc-views-cell">
+                                        <span class="kc-view-count">100k</span>
+                                        <span class="kc-kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                    </div>
+                                </td>
+                                <td class="kc-reward-cell">₹1000</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="kc-platform-cell">
+                                        <div class="kc-table-icon facebook">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.641c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z" />
+                                            </svg>
+                                        </div>
+                                        Facebook
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="kc-views-cell">
+                                        <span class="kc-view-count">100k</span>
+                                        <span class="kc-kannada-sub">(1 ಲಕ್ಷ) <br> ವೀಕ್ಷಣೆ</span>
+                                    </div>
+                                </td>
+                                <td class="kc-reward-cell">₹1000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="kc-details-list">
+                    <div class="kc-detail-item">
+                        <span>Reward Amount / ಮೊತ್ತ:</span>
+                        <strong>₹1000</strong>
+                    </div>
+                    <div class="kc-detail-item">
+                        <span>Minimum Views / ಕನಿಷ್ಠ ವೀಕ್ಷಣೆಗಳು:</span>
+                        <strong>1,00,000+</strong>
+                    </div>
+                    <div class="kc-detail-item">
+                        <span>Platforms / ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳು:</span>
+                        <strong>YouTube, Instagram, Facebook</strong>
+                    </div>
+                    <div class="kc-detail-item">
+                        <span>Payment Mode:</span>
+                        <strong>UPI or Bank Transfer</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Required -->
+        <section class="kc-section">
+            <div class="kc-container">
+                <h2 class="kc-section-title">Details Required <br> <span class="kc-kannada-title">ಅಗತ್ಯವಿರುವ ವಿವರಗಳು</span></h2>
+                <p class="kc-section-desc">You will need to provide the following details in the Google Form / ಗೂಗಲ್ ಫಾರ್ಮ್‌ನಲ್ಲಿ ಈ ಕೆಳಗಿನ ವಿವರಗಳನ್ನು ನೀಡಬೇಕು:</p>
+                <ul class="kc-info-list">
+                    <li>Name (ಹೆಸರು)</li>
+                    <li>Email ID (ಇಮೇಲ್ ಐಡಿ)</li>
+                    <li>Mobile Number (ಮೊಬೈಲ್ ಸಂಖ್ಯೆ)</li>
+                    <li>Platform (YouTube/Insta/FB)</li>
+                    <li>Promoted Video Link (ವೀಡಿಯೊ ಲಿಂಕ್)</li>
+                    <li>UPI ID or Bank Account Details</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Terms -->
+        <section class="kc-footer-terms">
+            <div class="kc-container">
+                <h3>Terms & Conditions / ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು</h3>
+                <ul>
+                    <li>Video must clearly promote Kannada Calendar App or Website.</li>
+                    <li>Fake or paid views are not allowed.</li>
+                    <li>Only public videos are eligible.</li>
+                    <li>Reward will be processed after verification.</li>
+                    <li>One reward per video.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="kc-cta-section">
+            <div class="kc-container">
+                <h2>Ready to Claim?</h2>
+                <a href="#" class="kc-btn kc-btn-large kc-claim-btn">Submit Details & Claim ₹1000 <br> <span class="kc-btn-sub">ವಿವರಗಳನ್ನು ಸಲ್ಲಿಸಿ & ಬಹುಮಾನ ಪಡೆಯಿರಿ</span></a>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <div class="kc-container">
+            <div class="kc-social-media-section">
+                <h2 class="kc-social-heading">Connect With Us</h2>
+                <p class="kc-social-subheading">ನಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರಿ | Stay Updated</p>
+
+                <div class="kc-social-icons-grid">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkannadacalendar.in" target="_blank" class="kc-social-link-card" aria-label="Follow us on Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #1877F2;">
+                            <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                        </svg>
+                        <span class="kc-social-link-name">Facebook</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/" target="_blank" class="kc-social-link-card" aria-label="Follow us on Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <defs>
+                                <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#FED373;stop-opacity:1" />
+                                    <stop offset="25%" style="stop-color:#F15245;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#D92E7F;stop-opacity:1" />
+                                    <stop offset="75%" style="stop-color:#9B36B7;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#515ECF;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#instagram-gradient)" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                        <span class="kc-social-link-name">Instagram</span>
+                    </a>
+
+                    <!-- X (Twitter) -->
+                    <a href="https://x.com/intent/post?text=Kannada%20Calendar%202025-26%20Live%20Daily%20%E0%B2%95%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B2%E0%B3%86%E0%B2%82%E0%B2%A1%E0%B2%B0%E0%B3%8D%20%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1%202026&url=https%3A%2F%2Fkannadacalendar.in" target="_blank" class="kc-social-link-card" aria-label="Follow us on X">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #000000;">
+                            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                        </svg>
+                        <span class="kc-social-link-name">X (Twitter)</span>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://telegram.me/share/url?url=https%3A%2F%2Fkannadacalendar.in&text=Kannada%20Calendar%202025-26%20Live%20Daily%20%E0%B2%95%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B2%E0%B3%86%E0%B2%82%E0%B2%A1%E0%B2%B0%E0%B3%8D%20%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1%202026" target="_blank" class="kc-social-link-card" aria-label="Join us on Telegram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="fill: #0088cc;">
+                            <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z" />
+                        </svg>
+                        <span class="kc-social-link-name">Telegram</span>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://www.whatsapp.com/channel/0029VaDcfdAIiRou6RuGYr0d" target="_blank" class="kc-social-link-card" aria-label="Join our WhatsApp Channel">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill: #25D366;">
+                            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                        <span class="kc-social-link-name">WhatsApp</span>
+                    </a>
+
+                    <!-- Website -->
+                    <a href="https://kannadacalendar.in" target="_blank" class="kc-social-link-card" aria-label="Visit our Website">
+                        <img src="https://kannadacalendar.in/images/freecalimage/logo.png" alt="Kannada Calendar Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 8px;">
+                        <span class="kc-social-link-name">Website</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // WordPress-compatible JavaScript
+            document.addEventListener('DOMContentLoaded', function() {
+                var claimButtons = document.querySelectorAll('.kc-claim-btn');
+                
+                // Add click event to claim buttons
+                claimButtons.forEach(function(button) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.open('https://kannadacalendar.in/google-form/', '_blank');
+                    });
+                });
+            });
+        })();
+    </script>
+</div>
+
+<!-- 
+WordPress Functions.php Code (Add to your theme's functions.php):
+===============================================================
+
+function kannada_calendar_reward_styles() {
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap', array(), null);
+}
+add_action('wp_enqueue_scripts', 'kannada_calendar_reward_styles');
+
+-->
