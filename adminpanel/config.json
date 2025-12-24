@@ -1,0 +1,22 @@
+{
+  "interstitial_ad_enabled": true,
+  "reward_ad_enabled": true,
+  "youtube_link": "gsIkR1Jiltw",
+  "redeem_website_link": "https://kannadacalendar.in/",
+  "visit_website_link": "https://kannadacalendar.in/",
+  "slider_items": [
+    {
+      "title": "",
+      "image_url": "https://kannadacalendar.in/images/app/1.png"
+    },
+    {
+      "title": "ಉಚಿತ ಮುದ್ರಿತ ಕನ್ನಡ ಕ್ಯಾಲೆಂಡರ್ 2026 ಪಡೆಯಿರಿ",
+      "image_url": "https://kannadacalendar.in/images/app/2.png"
+    },
+    {
+      "title": "ಪ್ರತಿ ದಿನದ ಪಂಚಾಂಗ, ರಾಶಿ ಭವಿಷ್ಯ ಮತ್ತು ಮುಹೂರ್ತ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಿರಿ.",
+      "image_url": "https://kannadacalendar.in/images/app/3.png"
+    }
+  ],
+  "last_updated": "2024-01-01 00:00:00"
+}
